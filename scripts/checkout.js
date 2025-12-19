@@ -16,7 +16,7 @@ cart.forEach((cartItem) => {
   })
 
 cartSummaryHtml += `
-    <div class="cart-item-container js-cart-item-container-${matchingProduct.productId}">
+    <div class="cart-item-container js-cart-item-container-${matchingProduct.id}">
     <div class="delivery-date">
       Delivery date: Tuesday, June 21
     </div>
@@ -39,7 +39,7 @@ cartSummaryHtml += `
           <span class="update-quantity-link link-primary">
             Update
           </span>
-          <span class="delete-quantity-link link-primary js-delete-quantity" data-product-id = "${matchingProduct.productId}">
+          <span class="delete-quantity-link link-primary js-delete-quantity" data-product-id = "${matchingProduct.id}">
             Delete
           </span>
         </div>
@@ -91,7 +91,6 @@ cartSummaryHtml += `
       </div>
     </div>
   </div>
-
   `
 })
 
