@@ -3,9 +3,11 @@ import { products, getProduct} from '../../data/products.js';
 import { formatCurrency } from '../utils/money.js';
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
 import {deliveryOpt,getDeliveryOptions} from '../../data/deliveryOptions.js';
+import { renderPaymentSummary } from './paymentSummaryRight.js';
 
 
-export function renderOrderSummary(){
+export function renderOrderSummary()
+{
 
   let cartSummaryHtml = "";
 
@@ -116,6 +118,8 @@ document.querySelectorAll('.js-delete-quantity').forEach((link) => {
     deleteItem(productId);
 
     document.querySelector(`.js-cart-item-container-${productId}`).remove();
+
+    renderPaymentSummary();
     
   })
 });
@@ -125,9 +129,9 @@ document.querySelectorAll('.js-delivery-option').forEach((element) => {
     const {productId,deliveryOptionId} = element.dataset;  
     updateDeliveryOpt(productId,deliveryOptionId);
     renderOrderSummary();
+    renderPaymentSummary();
   })
 })
 
 };
 
-renderOrderSummary();
