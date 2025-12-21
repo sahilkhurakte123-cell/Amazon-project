@@ -18,7 +18,7 @@ cart.forEach((cartItem) => {
 
   const deliveryOptionId = cartItem.deliveryOptionId;
 
-  const delOpt = getDeliveryOptions();
+  const delOpt = getDeliveryOptions(deliveryOptionId);
   
   const today = dayjs();
   const deliveryDate = today.add(
