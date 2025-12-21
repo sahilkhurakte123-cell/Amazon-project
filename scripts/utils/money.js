@@ -1,3 +1,3 @@
 export function formatCurrency(InCents){
-  return ((InCents)/100).toFixed(2);
+  return (Math.round(InCents)/100).toFixed(2);
 }
